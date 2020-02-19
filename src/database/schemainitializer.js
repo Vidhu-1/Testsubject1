@@ -20,5 +20,12 @@ manufacture.belongsToMany(product,{
     otherKey: "product_id",
     timestamp:"false"
 })
+manufacture.belongsToMany(product,{
+    through:cart,
+    foreignKey:"product_id",
+    otherKey:"user_id",
+    timestamp:"false"
+    
+    })
 
 db.sync()
